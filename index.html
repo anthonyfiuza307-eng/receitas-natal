@@ -241,6 +241,63 @@
   src="https://www.facebook.com/tr?id=1355838073247780&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
+
+  <!-- NexoFy UTM Tracking Script -->
+  <script>
+  (function(){
+    var K=['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_id','src','sck','fbclid','gclid','ttclid'];
+    var S='nexofy_utm',TTL=2592000000;
+    function save(o){
+      try{localStorage.setItem(S,JSON.stringify({t:Date.now(),v:o}))}catch(e){}
+      try{document.cookie=S+'='+encodeURIComponent(JSON.stringify(o))+';path=/;max-age=2592000;SameSite=Lax'}catch(e){}
+    }
+    function read(){
+      try{var r=JSON.parse(localStorage.getItem(S)||'null');if(r&&r.v&&Date.now()-r.t<TTL)return r.v}catch(e){}
+      var m=document.cookie.match('(?:^|; )'+S+'=([^;]*)');
+      if(m){try{return JSON.parse(decodeURIComponent(m[1]))}catch(e){}}
+      return {};
+    }
+    function fromUrl(){
+      var q=new URLSearchParams(location.search),o={};
+      K.forEach(function(k){var v=q.get(k);if(v)o[k]=v});
+      return o;
+    }
+    var incoming=fromUrl();
+    var data=Object.keys(incoming).length?incoming:read();
+    if(Object.keys(incoming).length)save(incoming);
+    window.nexofyUtm=data;
+    if(!Object.keys(data).length)return;
+    function link(a){
+      var h=a.getAttribute('href');
+      if(!h||/^(#|mailto:|tel:|javascript:)/i.test(h))return;
+      var u;try{u=new URL(h,location.href)}catch(e){return}
+      if(u.protocol!=='http:'&&u.protocol!=='https:')return;
+      var changed=false;
+      K.forEach(function(k){if(data[k]&&!u.searchParams.get(k)){u.searchParams.set(k,data[k]);changed=true}});
+      if(changed)a.setAttribute('href',u.toString());
+    }
+    function form(f){
+      if(f.getAttribute('data-nexofy'))return;
+      f.setAttribute('data-nexofy','1');
+      K.forEach(function(k){
+        if(!data[k]||f.querySelector('[name="'+k+'"]'))return;
+        var i=document.createElement('input');i.type='hidden';i.name=k;i.value=data[k];f.appendChild(i);
+      });
+    }
+    function apply(){
+      var a=document.getElementsByTagName('a');for(var i=0;i<a.length;i++)link(a[i]);
+      var f=document.getElementsByTagName('form');for(var j=0;j<f.length;j++)form(f[j]);
+    }
+    apply();
+    document.addEventListener('DOMContentLoaded',apply);
+    document.addEventListener('click',function(e){
+      var t=e.target;
+      while(t&&t.tagName!=='A')t=t.parentElement;
+      if(t)link(t);
+    },true);
+    if(window.MutationObserver)new MutationObserver(apply).observe(document.documentElement,{childList:true,subtree:true});
+  })();
+  </script>
 </head>
 <body class="bg-vanilla text-ganache-text font-sans antialiased selection:bg-cherry selection:text-white">
 
@@ -1163,11 +1220,11 @@
           </div>
 
           <div>
-            <!-- CLIQUE DIRETO: SEM POPUP! VAI DIRETO AO CHECKOUT -->
-            <button onclick="handleCompletoClick()" class="btn-shimmer w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-cherry to-cherry-dark hover:from-red-600 hover:to-cherry text-white font-extrabold text-sm sm:text-base py-4 px-4 rounded-xl shadow-cta-glow transition-all text-center animate-pulse-cta border border-white/20 cursor-pointer active:translate-y-0.5">
+            <!-- CLIQUE DIRETO: LINK <a> COM HREF REAL E INJEÇÃO AUTOMÁTICA DE UTMS -->
+            <a id="btn-checkout-completo" href="https://pay.kiwify.com.br/SEU_LINK_COMPLETO_29_90" target="_blank" class="btn-shimmer w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-cherry to-cherry-dark hover:from-red-600 hover:to-cherry text-white font-extrabold text-sm sm:text-base py-4 px-4 rounded-xl shadow-cta-glow transition-all text-center animate-pulse-cta border border-white/20 cursor-pointer active:translate-y-0.5">
               <i class="fa-solid fa-gift text-amber-300"></i>
               <span>QUERO O PLANO COMPLETO POR R$ 29,90</span>
-            </button>
+            </a>
             <span class="block text-center text-[10px] text-ganache-muted mt-2">
               🔒 Compra 100% segura • Garantia incondicional de 7 dias
             </span>
@@ -1454,14 +1511,14 @@
         </span>
       </div>
 
-      <!-- Botão Principal de Alta Conversão (Verde / Dourado) -->
-      <a id="btn-upgrade-recall" href="#" target="_blank" onclick="closeRecallModal()" class="btn-shimmer w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-700 via-emerald-600 to-pine text-white font-black text-sm sm:text-base py-4 px-6 rounded-xl shadow-card-premium border border-amber-300 hover:from-emerald-600 hover:to-emerald-700 transition-all cursor-pointer">
+      <!-- Botão Principal de Alta Conversão (Verde / Dourado) com href real para UTMs -->
+      <a id="btn-upgrade-recall" href="https://pay.kiwify.com.br/SEU_LINK_UPGRADE_25_90" target="_blank" onclick="closeRecallModal()" class="btn-shimmer w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-700 via-emerald-600 to-pine text-white font-black text-sm sm:text-base py-4 px-6 rounded-xl shadow-card-premium border border-amber-300 hover:from-emerald-600 hover:to-emerald-700 transition-all cursor-pointer">
         <span>SIM! QUERO O PLANO COMPLETO POR R$ 25,90</span>
       </a>
 
-      <!-- Link secundário discreto para continuar no Básico -->
+      <!-- Link secundário discreto para continuar no Básico com href real para UTMs -->
       <div class="mt-4">
-        <a id="link-recusa-basico" href="#" target="_blank" onclick="closeRecallModal()" class="text-xs text-ganache-muted hover:text-ganache underline decoration-stone-300 transition-colors inline-block cursor-pointer">
+        <a id="link-recusa-basico" href="https://pay.kiwify.com.br/SEU_LINK_BASICO_17_90" target="_blank" onclick="closeRecallModal()" class="text-xs text-ganache-muted hover:text-ganache underline decoration-stone-300 transition-colors inline-block cursor-pointer">
           Não, obrigado. Quero continuar apenas com o Plano Básico por R$ 17,90 sem os bônus
         </a>
       </div>
@@ -1507,20 +1564,39 @@
     const LINK_CHECKOUT_COMPLETO_29_90 = "https://pay.kiwify.com.br/SEU_LINK_COMPLETO_29_90";
     const LINK_CHECKOUT_UPGRADE_25_90  = "https://pay.kiwify.com.br/SEU_LINK_UPGRADE_25_90";
 
-    /* ====================================================================
-       2. LÓGICA DE CHECKOUT E POPUP DE RECALL
-       - Plano Completo: Redirecionamento direto SEM POPUP
-       - Plano Básico: Abre popup de recall com oferta de R$ 25,90
-       ==================================================================== */
-    function handleCompletoClick() {
-      // Redireciona diretamente para o checkout do Plano Completo
-      window.open(LINK_CHECKOUT_COMPLETO_29_90, '_blank');
+    function appendNexofyUtms(rawUrl) {
+      if (!window.nexofyUtm || !Object.keys(window.nexofyUtm).length) return rawUrl;
+      try {
+        const u = new URL(rawUrl, window.location.href);
+        Object.keys(window.nexofyUtm).forEach(k => {
+          if (window.nexofyUtm[k] && !u.searchParams.get(k)) {
+            u.searchParams.set(k, window.nexofyUtm[k]);
+          }
+        });
+        return u.toString();
+      } catch (e) {
+        return rawUrl;
+      }
     }
 
+    function syncCheckoutLinks() {
+      const btnCompleto = document.getElementById('btn-checkout-completo');
+      if (btnCompleto) btnCompleto.href = appendNexofyUtms(LINK_CHECKOUT_COMPLETO_29_90);
+      const btnUpgrade = document.getElementById('btn-upgrade-recall');
+      if (btnUpgrade) btnUpgrade.href = appendNexofyUtms(LINK_CHECKOUT_UPGRADE_25_90);
+      const linkBasico = document.getElementById('link-recusa-basico');
+      if (linkBasico) linkBasico.href = appendNexofyUtms(LINK_CHECKOUT_BASICO_17_90);
+    }
+    syncCheckoutLinks();
+    document.addEventListener('DOMContentLoaded', syncCheckoutLinks);
+
+    /* ====================================================================
+       2. LÓGICA DE CHECKOUT E POPUP DE RECALL
+       - Plano Completo: Link <a> direto com injeção automática de UTMs
+       - Plano Básico: Abre popup de recall com oferta de R$ 25,90
+       ==================================================================== */
     function handleBasicoClick() {
-      // Configura os links do popup de recall
-      document.getElementById('btn-upgrade-recall').href = LINK_CHECKOUT_UPGRADE_25_90;
-      document.getElementById('link-recusa-basico').href = LINK_CHECKOUT_BASICO_17_90;
+      syncCheckoutLinks();
 
       // Abre o modal de recall inteligente
       const modal = document.getElementById('recall-modal');

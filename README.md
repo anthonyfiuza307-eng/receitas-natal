@@ -53,6 +53,7 @@ const LINK_CHECKOUT_UPGRADE_25_90  = "https://pay.kiwify.com.br/SEU_LINK_UPGRADE
   - *Resumo de Valor dos Bônus:* Brilho radial dourado no topo e selo festivo de presente.
 - **Mockup Hero 100% Transparente & Orgânico:** O arquivo [mockup-hero-transparente.png](mockup-hero-transparente.png) recortado com precisão e sombras naturais na base, integrado perfeitamente ao fundo creme baunilha sem cortes ou caixas pretas.
 - **Rastreamento Meta Pixel:** Meta Pixel Code (`1355838073247780`) integrado no `<head>` com evento de `PageView`.
+- **Rastreamento de UTMs NexoFy:** Script inteligente na `<head>` com persistência em cookie e `localStorage` (`nexofy_utm`), injetando parâmetros (`utm_source`, `utm_campaign`, `fbclid`, `src`, etc.) dinamicamente em todos os links e botões de checkout.
 - **Correção Total de Imagens & Proporções:**
   - Proporção harmoniosa `aspect-video` em todos os depoimentos visuais (sem faixas comprimidas).
   - 100% das fotos dedicadas a sobremesas natalinas reais e apetitosas.
