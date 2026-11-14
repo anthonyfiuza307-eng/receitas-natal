@@ -273,7 +273,7 @@
       var u;try{u=new URL(h,location.href)}catch(e){return}
       if(u.protocol!=='http:'&&u.protocol!=='https:')return;
       var changed=false;
-      K.forEach(function(k){if(data[k]){u.searchParams.set(k,data[k]);changed=true}});
+      K.forEach(function(k){if(data[k]&&!u.searchParams.get(k)){u.searchParams.set(k,data[k]);changed=true}});
       if(changed)a.setAttribute('href',u.toString());
     }
     function form(f){
