@@ -34,13 +34,13 @@ Landing page de altíssima conversão em funil vertical de coluna única para ve
 
 ---
 
-## ⚙️ Configuração dos Links de Checkout
-No final do arquivo `index.html` (dentro da tag `<script>`), personalize as variáveis com suas URLs:
+## ⚙️ Configuração dos Links de Checkout (Zuptos)
+Os links oficiais de checkout da Zuptos com parâmetros de rastreamento e suporte dinâmico a UTMs:
 
 ```javascript
-const LINK_CHECKOUT_BASICO_17_90   = "https://pay.kiwify.com.br/SEU_LINK_BASICO_17_90";
-const LINK_CHECKOUT_COMPLETO_29_90 = "https://pay.kiwify.com.br/SEU_LINK_COMPLETO_29_90";
-const LINK_CHECKOUT_UPGRADE_25_90  = "https://pay.kiwify.com.br/SEU_LINK_UPGRADE_25_90";
+const LINK_CHECKOUT_BASICO   = "https://app.zuptos.com.br/checkout/48e85ad99f483738?...";
+const LINK_CHECKOUT_COMPLETO = "https://app.zuptos.com.br/checkout/cbd622b89ace87b7?...";
+const LINK_CHECKOUT_UPGRADE  = "https://app.zuptos.com.br/checkout/fdaf3d44d4fb9cd0?...";
 ```
 
 ---
