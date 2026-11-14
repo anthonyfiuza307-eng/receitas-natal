@@ -361,7 +361,7 @@
 
       <!-- Mockup Principal Oficial da Coleção (Transparente e Integrada ao Fundo Creme) -->
       <div class="w-full max-w-[560px] mb-6">
-        <img src="mockup-hero-transparente.png" 
+        <img src="./mockup-hero-transparente.png" 
              alt="Coleção Completa Natal de Sobremesas Mágicas e Cardápio Natal de Vitrine" 
              class="w-full max-w-[560px] h-auto object-contain mx-auto transition-transform duration-300 hover:scale-[1.02]"
              style="filter: drop-shadow(0 18px 28px rgba(30, 17, 10, 0.18));">
@@ -593,7 +593,7 @@
       <div class="w-full rounded-3xl overflow-hidden border border-gold/30 shadow-card-premium mb-8 premium-card">
         <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80" 
              alt="Sobremesas Mágicas de Natal na mesa" 
-             class="w-full h-56 sm:h-72 object-cover">
+             class="w-full aspect-video sm:aspect-[21/9] object-cover object-center">
       </div>
 
       <!-- Lista vertical com os 5 tópicos obrigatórios -->
@@ -1077,7 +1077,7 @@
       </p>
 
       <!-- Comparativo de Planos (2 colunas no desktop para comparação direta) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch text-left">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6 items-stretch text-left pt-6">
         
         <!-- ================= PLANO BÁSICO (ABRE POPUP DE RECALL) ================= -->
         <div class="bg-white rounded-3xl p-6 sm:p-7 border border-gold/30 shadow-card-premium premium-card flex flex-col justify-between">
@@ -1099,7 +1099,9 @@
                 <span class="text-ganache font-bold text-sm">R$</span>
                 <span class="text-3xl sm:text-4xl font-black text-ganache font-sans">17,90</span>
               </div>
-              <span class="text-[11px] text-emerald-800 font-semibold block">Acesso digital imediato</span>
+              <span class="text-[11px] text-amber-900 font-semibold block flex items-center gap-1">
+                <span>⚠️</span> <span>Acesso digital por apenas 3 meses</span>
+              </span>
             </div>
 
             <ul class="space-y-3 text-xs sm:text-sm text-ganache-text mb-6">
@@ -1111,9 +1113,9 @@
                 <i class="fa-solid fa-check text-emerald-700 mt-1"></i>
                 <span>Modo de preparo passo a passo</span>
               </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-emerald-700 mt-1"></i>
-                <span>Acesso imediato em PDF</span>
+              <li class="flex items-start gap-2 font-medium text-amber-900 bg-amber-50/80 p-1.5 rounded-lg border border-amber-200/80">
+                <span class="mt-0.5">⏳</span>
+                <span>Acesso limitado por apenas 3 meses</span>
               </li>
               <li class="flex items-start gap-2">
                 <i class="fa-solid fa-check text-emerald-700 mt-1"></i>
@@ -1143,16 +1145,16 @@
         </div>
 
         <!-- ================= PLANO COMPLETO (REDIRECIONAMENTO DIRETO) ================= -->
-        <div class="bg-gradient-to-b from-white via-vanilla to-white rounded-3xl p-6 sm:p-7 border-2 border-gold shadow-gold-glow premium-card flex flex-col justify-between relative transform md:-translate-y-2 overflow-hidden">
+        <div class="bg-gradient-to-b from-white via-vanilla to-white rounded-3xl p-6 sm:p-7 border-2 border-gold shadow-gold-glow premium-card flex flex-col justify-between relative transform md:-translate-y-2 overflow-visible">
           
           <!-- Brilho radial suave no topo do card (Acabamento Presente de Natal Premium) -->
           <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-80 h-44 bg-gradient-to-b from-amber-200/40 via-gold/15 to-transparent rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
 
-          <!-- Badge de Destaque com Ícone Laço/Presente -->
-          <div class="absolute -top-3.5 inset-x-0 flex justify-center">
-            <span class="bg-gradient-to-r from-cherry via-red-600 to-cherry-dark text-white text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider py-1 px-4 rounded-full shadow-md border border-amber-300 flex items-center gap-1.5">
-              <span>🎁</span>
-              <span>MAIS ESCOLHIDO — 87% DAS CLIENTES</span>
+          <!-- Badge de Destaque Flutuante (100% Visível e Sem Cortes) -->
+          <div class="absolute -top-4 inset-x-0 flex justify-center z-20">
+            <span class="bg-gradient-to-r from-cherry via-red-600 to-cherry-dark text-white text-[11px] sm:text-xs font-extrabold uppercase tracking-wider py-1.5 px-4 rounded-full shadow-lg border border-amber-300 flex items-center gap-1.5 whitespace-nowrap">
+              <span>🏆</span>
+              <span>MAIS ESCOLHIDO • 87% DAS CLIENTES</span>
               <span>✨</span>
             </span>
           </div>
@@ -1198,15 +1200,15 @@
               </li>
               <li class="flex items-start gap-2 text-emerald-950 bg-emerald-50/90 p-2 rounded-xl border border-emerald-300">
                 <i class="fa-solid fa-gift text-emerald-700 mt-0.5"></i>
-                <span><strong>BÔNUS 1:</strong> Planilha Automática de Precificação (~~R$ 47,00~~)</span>
+                <span><strong>BÔNUS 1:</strong> Planilha Automática de Precificação (<del class="text-stone-400 line-through">R$ 47,00</del>)</span>
               </li>
               <li class="flex items-start gap-2 text-emerald-950 bg-emerald-50/90 p-2 rounded-xl border border-emerald-300">
                 <i class="fa-solid fa-gift text-emerald-700 mt-0.5"></i>
-                <span><strong>BÔNUS 2:</strong> Lista de Compras Inteligente (~~R$ 37,00~~)</span>
+                <span><strong>BÔNUS 2:</strong> Lista de Compras Inteligente (<del class="text-stone-400 line-through">R$ 37,00</del>)</span>
               </li>
               <li class="flex items-start gap-2 text-emerald-950 bg-emerald-50/90 p-2 rounded-xl border border-emerald-300">
                 <i class="fa-solid fa-gift text-emerald-700 mt-0.5"></i>
-                <span><strong>BÔNUS 3:</strong> Guia de Embalagens e Apresentação (~~R$ 27,00~~)</span>
+                <span><strong>BÔNUS 3:</strong> Guia de Embalagens e Apresentação (<del class="text-stone-400 line-through">R$ 27,00</del>)</span>
               </li>
               <li class="flex items-start gap-2">
                 <i class="fa-solid fa-infinity text-gold mt-1"></i>
@@ -1495,7 +1497,7 @@
       
       <!-- Copy persuasiva curta -->
       <p class="text-ganache-text text-xs sm:text-sm mb-4 leading-relaxed">
-        Por apenas <strong class="text-emerald-800 font-extrabold text-sm sm:text-base">R$ 8,00 a mais</strong>, você leva as 30 Receitas + Todos os 3 Bônus (avaliados em R$ 111,00) com atualização vitalícia.
+        No Plano Básico seu acesso expira em <strong class="text-cherry font-bold">apenas 3 meses</strong> e você fica sem os bônus. Atualize agora para o <strong class="text-emerald-800 font-bold">Plano Completo com Acesso Vitalício + 3 Bônus</strong> por apenas R$ 25,90!
       </p>
 
       <!-- Preço ancorado no Popup -->
@@ -1519,7 +1521,7 @@
       <!-- Link secundário discreto para continuar no Básico com href real para UTMs -->
       <div class="mt-4">
         <a id="link-recusa-basico" href="https://app.zuptos.com.br/checkout/48e85ad99f483738?utm_source=FB&utm_campaign={{campaign.name}}|{{campaign.id}}&utm_medium={{adset.name}}|{{adset.id}}&utm_content={{ad.name}}|{{ad.id}}&utm_term={{placement}}&xcod=FBhQwK21wXxR{{campaign.name}}|{{campaign.id}}hQwK21wXxR{{adset.name}}|{{adset.id}}hQwK21wXxR{{ad.name}}|{{ad.id}}hQwK21wXxR{{placement}}" target="_blank" onclick="closeRecallModal()" class="text-xs text-ganache-muted hover:text-ganache underline decoration-stone-300 transition-colors inline-block cursor-pointer">
-          Não, obrigado. Quero continuar apenas com o Plano Básico por R$ 17,90 sem os bônus
+          Não, obrigado. Quero continuar apenas com o Plano Básico (acesso de 3 meses e sem os bônus)
         </a>
       </div>
 
