@@ -964,78 +964,81 @@
       </p>
 
       <!-- Container do Carrossel com Setas Relativas -->
-      <div class="relative max-w-[780px] mx-auto group">
+      <div class="relative max-w-[780px] mx-auto">
         
         <!-- Seta Esquerda -->
-        <button id="whatsapp-prev-btn" 
+        <button id="depoimentos-prev" 
                 type="button"
                 aria-label="Ver print anterior" 
-                class="absolute -left-2 sm:-left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/95 text-ganache hover:text-cherry border border-gold/40 shadow-card-hover flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none cursor-pointer">
+                class="absolute -left-2 sm:-left-5 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white text-ganache hover:text-cherry border border-gold/40 shadow-card-hover flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none cursor-pointer">
           <i class="fa-solid fa-chevron-left text-sm sm:text-base"></i>
         </button>
 
         <!-- Seta Direita -->
-        <button id="whatsapp-next-btn" 
+        <button id="depoimentos-next" 
                 type="button"
                 aria-label="Ver próximo print" 
-                class="absolute -right-2 sm:-right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/95 text-ganache hover:text-cherry border border-gold/40 shadow-card-hover flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none cursor-pointer">
+                class="absolute -right-2 sm:-right-5 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white text-ganache hover:text-cherry border border-gold/40 shadow-card-hover flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none cursor-pointer">
           <i class="fa-solid fa-chevron-right text-sm sm:text-base"></i>
         </button>
 
-        <!-- Trilha de Slides com Scroll Horizontal e Snap Nativo -->
-        <div id="whatsapp-carousel-track" 
-             class="flex gap-4 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth py-3 px-2" 
-             style="scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch;">
-          
-          <!-- Slide 1 -->
-          <div class="w-[280px] sm:w-[320px] flex-shrink-0 snap-center rounded-2xl border border-[#D4AF37]/40 shadow-md bg-white p-2 sm:p-2.5 transition-transform duration-300 hover:scale-[1.01]">
-            <img src="./print-whatsapp-1.png" 
-                 alt="Feedback de aluna Camila sobremesa na travessa" 
-                 loading="lazy"
-                 class="w-full h-auto object-contain rounded-xl select-none shadow-sm">
-          </div>
+        <!-- Container Visível com Overflow Hidden (Sem barra de rolagem e sem travar) -->
+        <div id="depoimentos-carousel" class="w-full overflow-hidden rounded-2xl py-2">
+          <!-- Trilho deslizante real via transform: translateX -->
+          <div id="depoimentos-track" 
+               class="flex gap-4 select-none" 
+               style="transition: transform 0.6s ease-in-out; will-change: transform;">
+            
+            <!-- Slide 1 -->
+            <div class="depoimento-slide min-w-[280px] sm:min-w-[310px] w-[280px] sm:w-[310px] flex-shrink-0 rounded-2xl border border-[#D4AF37]/40 shadow-md bg-white p-2 sm:p-2.5 transition-transform duration-300 hover:scale-[1.01]">
+              <img src="./print-whatsapp-1.png" 
+                   alt="Feedback de aluna Camila sobremesa na travessa" 
+                   loading="lazy"
+                   class="w-full h-auto object-contain rounded-xl select-none shadow-sm pointer-events-none">
+            </div>
 
-          <!-- Slide 2 -->
-          <div class="w-[280px] sm:w-[320px] flex-shrink-0 snap-center rounded-2xl border border-[#D4AF37]/40 shadow-md bg-white p-2 sm:p-2.5 transition-transform duration-300 hover:scale-[1.01]">
-            <img src="./print-whatsapp-2.png" 
-                 alt="Feedback de aluna Camila brilho de vitrine na sobremesa" 
-                 loading="lazy"
-                 class="w-full h-auto object-contain rounded-xl select-none shadow-sm">
-          </div>
+            <!-- Slide 2 -->
+            <div class="depoimento-slide min-w-[280px] sm:min-w-[310px] w-[280px] sm:w-[310px] flex-shrink-0 rounded-2xl border border-[#D4AF37]/40 shadow-md bg-white p-2 sm:p-2.5 transition-transform duration-300 hover:scale-[1.01]">
+              <img src="./print-whatsapp-2.png" 
+                   alt="Feedback de aluna Camila brilho de vitrine na sobremesa" 
+                   loading="lazy"
+                   class="w-full h-auto object-contain rounded-xl select-none shadow-sm pointer-events-none">
+            </div>
 
-          <!-- Slide 3 -->
-          <div class="w-[280px] sm:w-[320px] flex-shrink-0 snap-center rounded-2xl border border-[#D4AF37]/40 shadow-md bg-white p-2 sm:p-2.5 transition-transform duration-300 hover:scale-[1.01]">
-            <img src="./print-whatsapp-3.png" 
-                 alt="Feedback de aluna Juliana Guirlanda de Brownie e encomendas" 
-                 loading="lazy"
-                 class="w-full h-auto object-contain rounded-xl select-none shadow-sm">
-          </div>
+            <!-- Slide 3 -->
+            <div class="depoimento-slide min-w-[280px] sm:min-w-[310px] w-[280px] sm:w-[310px] flex-shrink-0 rounded-2xl border border-[#D4AF37]/40 shadow-md bg-white p-2 sm:p-2.5 transition-transform duration-300 hover:scale-[1.01]">
+              <img src="./print-whatsapp-3.png" 
+                   alt="Feedback de aluna Juliana Guirlanda de Brownie e encomendas" 
+                   loading="lazy"
+                   class="w-full h-auto object-contain rounded-xl select-none shadow-sm pointer-events-none">
+            </div>
 
-          <!-- Slide 4 -->
-          <div class="w-[280px] sm:w-[320px] flex-shrink-0 snap-center rounded-2xl border border-[#D4AF37]/40 shadow-md bg-white p-2 sm:p-2.5 transition-transform duration-300 hover:scale-[1.01]">
-            <img src="./print-whatsapp-4.png" 
-                 alt="Feedback de aluna Juliana lucros de encomendas no Natal" 
-                 loading="lazy"
-                 class="w-full h-auto object-contain rounded-xl select-none shadow-sm">
-          </div>
+            <!-- Slide 4 -->
+            <div class="depoimento-slide min-w-[280px] sm:min-w-[310px] w-[280px] sm:w-[310px] flex-shrink-0 rounded-2xl border border-[#D4AF37]/40 shadow-md bg-white p-2 sm:p-2.5 transition-transform duration-300 hover:scale-[1.01]">
+              <img src="./print-whatsapp-4.png" 
+                   alt="Feedback de aluna Juliana lucros de encomendas no Natal" 
+                   loading="lazy"
+                   class="w-full h-auto object-contain rounded-xl select-none shadow-sm pointer-events-none">
+            </div>
 
-          <!-- Slide 5 -->
-          <div class="w-[280px] sm:w-[320px] flex-shrink-0 snap-center rounded-2xl border border-[#D4AF37]/40 shadow-md bg-white p-2 sm:p-2.5 transition-transform duration-300 hover:scale-[1.01]">
-            <img src="./print-whatsapp-5.png" 
-                 alt="Feedback de aluna Marcia ingredientes fáceis e econômicos" 
-                 loading="lazy"
-                 class="w-full h-auto object-contain rounded-xl select-none shadow-sm">
-          </div>
+            <!-- Slide 5 -->
+            <div class="depoimento-slide min-w-[280px] sm:min-w-[310px] w-[280px] sm:w-[310px] flex-shrink-0 rounded-2xl border border-[#D4AF37]/40 shadow-md bg-white p-2 sm:p-2.5 transition-transform duration-300 hover:scale-[1.01]">
+              <img src="./print-whatsapp-5.png" 
+                   alt="Feedback de aluna Marcia ingredientes fáceis e econômicos" 
+                   loading="lazy"
+                   class="w-full h-auto object-contain rounded-xl select-none shadow-sm pointer-events-none">
+            </div>
 
+          </div>
         </div>
 
         <!-- Indicadores (Dots) na base do Carrossel -->
-        <div id="whatsapp-carousel-dots" class="flex items-center justify-center gap-2 mt-4">
-          <button type="button" aria-label="Ir para o print 1" class="w-3 h-3 rounded-full bg-gold transition-all duration-300 cursor-pointer"></button>
-          <button type="button" aria-label="Ir para o print 2" class="w-2.5 h-2.5 rounded-full bg-stone-300 transition-all duration-300 hover:bg-gold/60 cursor-pointer"></button>
-          <button type="button" aria-label="Ir para o print 3" class="w-2.5 h-2.5 rounded-full bg-stone-300 transition-all duration-300 hover:bg-gold/60 cursor-pointer"></button>
-          <button type="button" aria-label="Ir para o print 4" class="w-2.5 h-2.5 rounded-full bg-stone-300 transition-all duration-300 hover:bg-gold/60 cursor-pointer"></button>
-          <button type="button" aria-label="Ir para o print 5" class="w-2.5 h-2.5 rounded-full bg-stone-300 transition-all duration-300 hover:bg-gold/60 cursor-pointer"></button>
+        <div id="depoimentos-dots" class="flex items-center justify-center gap-2 mt-5">
+          <button type="button" aria-label="Ir para print 1" class="w-3 h-3 rounded-full bg-gold transition-all duration-300 cursor-pointer"></button>
+          <button type="button" aria-label="Ir para print 2" class="w-2.5 h-2.5 rounded-full bg-stone-300 transition-all duration-300 hover:bg-gold/60 cursor-pointer"></button>
+          <button type="button" aria-label="Ir para print 3" class="w-2.5 h-2.5 rounded-full bg-stone-300 transition-all duration-300 hover:bg-gold/60 cursor-pointer"></button>
+          <button type="button" aria-label="Ir para print 4" class="w-2.5 h-2.5 rounded-full bg-stone-300 transition-all duration-300 hover:bg-gold/60 cursor-pointer"></button>
+          <button type="button" aria-label="Ir para print 5" class="w-2.5 h-2.5 rounded-full bg-stone-300 transition-all duration-300 hover:bg-gold/60 cursor-pointer"></button>
         </div>
 
       </div>
@@ -1954,51 +1957,90 @@
     }, 4500);
 
     /* ====================================================================
-       6. GERENCIADOR MODULAR DE CARROSSÉIS AUTOMÁTICOS
-       - Carrossel 1 (Hero Sobremesas): Autoplay 2.8s em loop contínuo
-       - Carrossel 2 (WhatsApp Prints): Autoplay 3.5s + Setas + Dots sincronizados
+       6. CARROSSEL DE DEPOIMENTOS DO WHATSAPP (TRANSFORM: TRANSLATEX)
+       Autoplay 100% contínuo a cada 3s, setas, dots e pause no hover/touch
        ==================================================================== */
-    function initAutoCarousel(config) {
-      const track = document.getElementById(config.trackId);
-      if (!track) return;
+    (function initDepoimentosCarousel() {
+      const track = document.getElementById('depoimentos-track');
+      const carousel = document.getElementById('depoimentos-carousel');
+      const prevBtn = document.getElementById('depoimentos-prev');
+      const nextBtn = document.getElementById('depoimentos-next');
+      const dots = document.querySelectorAll('#depoimentos-dots button');
 
-      const prevBtn = config.prevBtnId ? document.getElementById(config.prevBtnId) : null;
-      const nextBtn = config.nextBtnId ? document.getElementById(config.nextBtnId) : null;
-      const dots = config.dotsSelector ? document.querySelectorAll(config.dotsSelector) : [];
-      const intervalMs = config.interval || 3000;
+      if (!track || !carousel) return;
 
-      function getScrollStep() {
-        const slide = track.querySelector('.snap-center') || track.firstElementChild;
-        return slide ? slide.offsetWidth + (config.gap || 16) : 260;
+      const slides = track.querySelectorAll('.depoimento-slide');
+      if (!slides.length) return;
+
+      let currentIndex = 0;
+      let autoplayTimer = null;
+
+      function getStep() {
+        const slide = slides[0];
+        const gap = 16;
+        return (slide ? slide.getBoundingClientRect().width : 300) + gap;
       }
 
-      function scrollToNext() {
-        const maxScroll = track.scrollWidth - track.clientWidth - 10;
-        if (track.scrollLeft >= maxScroll) {
-          track.scrollTo({ left: 0, behavior: 'smooth' });
+      function getMaxIndex() {
+        const step = getStep();
+        const total = (slides.length * step) - 16;
+        const visible = carousel.clientWidth || 360;
+        const maxScroll = total - visible;
+        if (maxScroll <= 0) return 0;
+        return Math.ceil(maxScroll / step);
+      }
+
+      function updateCarousel() {
+        const maxIndex = getMaxIndex();
+        if (currentIndex > maxIndex) currentIndex = 0;
+        if (currentIndex < 0) currentIndex = maxIndex;
+
+        const step = getStep();
+        const total = (slides.length * step) - 16;
+        const visible = carousel.clientWidth || 360;
+        const maxTranslate = Math.max(0, total - visible);
+        const target = Math.min(currentIndex * step, maxTranslate);
+
+        track.style.transform = `translateX(-${target}px)`;
+
+        dots.forEach((dot, idx) => {
+          if (idx === currentIndex) {
+            dot.className = 'w-3 h-3 rounded-full bg-gold transition-all duration-300 cursor-pointer';
+          } else {
+            dot.className = 'w-2.5 h-2.5 rounded-full bg-stone-300 transition-all duration-300 hover:bg-gold/60 cursor-pointer';
+          }
+        });
+      }
+
+      function nextSlide() {
+        const maxIndex = getMaxIndex();
+        if (currentIndex >= maxIndex) {
+          currentIndex = 0;
         } else {
-          track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+          currentIndex++;
         }
+        updateCarousel();
       }
 
-      function scrollToPrev() {
-        if (track.scrollLeft <= 10) {
-          track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
+      function prevSlide() {
+        const maxIndex = getMaxIndex();
+        if (currentIndex <= 0) {
+          currentIndex = maxIndex;
         } else {
-          track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+          currentIndex--;
         }
+        updateCarousel();
       }
 
-      let timer = null;
       function startAutoplay() {
-        if (timer) clearInterval(timer);
-        timer = setInterval(scrollToNext, intervalMs);
+        stopAutoplay();
+        autoplayTimer = setInterval(nextSlide, 3000);
       }
 
       function stopAutoplay() {
-        if (timer) {
-          clearInterval(timer);
-          timer = null;
+        if (autoplayTimer) {
+          clearInterval(autoplayTimer);
+          autoplayTimer = null;
         }
       }
 
@@ -2007,91 +2049,102 @@
         startAutoplay();
       }
 
-      if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-          scrollToPrev();
-          restartAutoplay();
-        });
-      }
-
       if (nextBtn) {
         nextBtn.addEventListener('click', () => {
-          scrollToNext();
+          nextSlide();
           restartAutoplay();
         });
       }
 
-      if (dots.length) {
-        dots.forEach((dot, index) => {
-          dot.addEventListener('click', () => {
-            const slides = track.querySelectorAll('.snap-center');
-            if (slides[index]) {
-              slides[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-              restartAutoplay();
-            }
-          });
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          prevSlide();
+          restartAutoplay();
         });
-
-        function updateActiveDot() {
-          const slides = track.querySelectorAll('.snap-center');
-          if (!slides.length) return;
-          const scrollCenter = track.scrollLeft + track.offsetWidth / 2;
-          let closestIndex = 0;
-          let minDiff = Infinity;
-
-          slides.forEach((slide, idx) => {
-            const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
-            const diff = Math.abs(scrollCenter - slideCenter);
-            if (diff < minDiff) {
-              minDiff = diff;
-              closestIndex = idx;
-            }
-          });
-
-          dots.forEach((dot, idx) => {
-            if (idx === closestIndex) {
-              dot.className = 'w-3 h-3 rounded-full bg-gold transition-all duration-300 cursor-pointer';
-            } else {
-              dot.className = 'w-2.5 h-2.5 rounded-full bg-stone-300 transition-all duration-300 hover:bg-gold/60 cursor-pointer';
-            }
-          });
-        }
-
-        let scrollTimeout;
-        track.addEventListener('scroll', () => {
-          if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
-          scrollTimeout = requestAnimationFrame(updateActiveDot);
-        }, { passive: true });
       }
 
-      startAutoplay();
+      dots.forEach((dot, idx) => {
+        dot.addEventListener('click', () => {
+          currentIndex = idx;
+          updateCarousel();
+          restartAutoplay();
+        });
+      });
 
-      // Pausa inteligente ao passar o cursor ou tocar na tela
-      const container = track.closest('.relative') || track;
+      const container = carousel.closest('.relative') || carousel;
       container.addEventListener('mouseenter', stopAutoplay);
       container.addEventListener('mouseleave', startAutoplay);
       container.addEventListener('touchstart', stopAutoplay, { passive: true });
       container.addEventListener('touchend', () => {
         setTimeout(startAutoplay, 1500);
       }, { passive: true });
-    }
 
-    // Inicialização Carrossel 1: Sobremesas da Hero Section (2.8s)
-    initAutoCarousel({
-      trackId: 'hero-desserts-track',
-      interval: 2800,
-      gap: 16
-    });
+      let touchStartX = 0;
+      carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
 
-    // Inicialização Carrossel 2: Prints de Depoimentos do WhatsApp (3.5s)
-    initAutoCarousel({
-      trackId: 'whatsapp-carousel-track',
-      prevBtnId: 'whatsapp-prev-btn',
-      nextBtnId: 'whatsapp-next-btn',
-      dotsSelector: '#whatsapp-carousel-dots button',
-      interval: 3500,
-      gap: 24
-    });
+      carousel.addEventListener('touchend', (e) => {
+        const diffX = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diffX) > 40) {
+          if (diffX > 0) nextSlide();
+          else prevSlide();
+          restartAutoplay();
+        }
+      }, { passive: true });
+
+      window.addEventListener('resize', updateCarousel);
+
+      updateCarousel();
+      startAutoplay();
+    })();
+
+    /* ====================================================================
+       7. CARROSSEL DE SOBREMESAS NA HERO SECTION
+       Autoplay independente a cada 2.8s em loop contínuo
+       ==================================================================== */
+    (function initHeroDessertsCarousel() {
+      const track = document.getElementById('hero-desserts-track');
+      if (!track) return;
+
+      let timer = null;
+
+      function getStep() {
+        const slide = track.querySelector('.snap-center') || track.firstElementChild;
+        return slide ? slide.offsetWidth + 16 : 240;
+      }
+
+      function stepNext() {
+        const maxScroll = track.scrollWidth - track.clientWidth - 10;
+        if (track.scrollLeft >= maxScroll) {
+          track.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          track.scrollBy({ left: getStep(), behavior: 'smooth' });
+        }
+      }
+
+      function start() {
+        if (timer) clearInterval(timer);
+        timer = setInterval(stepNext, 2800);
+      }
+
+      function stop() {
+        if (timer) {
+          clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      const container = track.closest('.relative') || track;
+      container.addEventListener('mouseenter', stop);
+      container.addEventListener('mouseleave', start);
+      container.addEventListener('touchstart', stop, { passive: true });
+      container.addEventListener('touchend', () => {
+        setTimeout(start, 1500);
+      }, { passive: true });
+
+      start();
+    })();
   </script>
 
 </body>
