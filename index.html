@@ -306,6 +306,15 @@
     if(window.MutationObserver)new MutationObserver(apply).observe(document.documentElement,{childList:true,subtree:true});
   })();
   </script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "zecqntzsgu");
+  </script>
 </head>
 <body class="bg-vanilla text-ganache-text font-sans antialiased selection:bg-cherry selection:text-white">
 
@@ -1841,7 +1850,7 @@
     }, 4500);
 
     /* ====================================================================
-       6. CARROSSEL DE PRINTS DO WHATSAPP (SWIPE + SETAS + DOTS NATIVOS)
+       6. CARROSSEL DE PRINTS DO WHATSAPP (AUTOPLAY + SWIPE + SETAS + DOTS)
        ==================================================================== */
     const waTrack = document.getElementById('whatsapp-carousel-track');
     const waPrevBtn = document.getElementById('whatsapp-prev-btn');
@@ -1854,15 +1863,34 @@
         return slide ? slide.offsetWidth + 20 : 320;
       }
 
+      function scrollToNext() {
+        const maxScroll = waTrack.scrollWidth - waTrack.clientWidth - 10;
+        if (waTrack.scrollLeft >= maxScroll) {
+          waTrack.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          waTrack.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+        }
+      }
+
+      function scrollToPrev() {
+        if (waTrack.scrollLeft <= 10) {
+          waTrack.scrollTo({ left: waTrack.scrollWidth, behavior: 'smooth' });
+        } else {
+          waTrack.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+        }
+      }
+
       if (waPrevBtn) {
         waPrevBtn.addEventListener('click', () => {
-          waTrack.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+          scrollToPrev();
+          restartAutoplay();
         });
       }
 
       if (waNextBtn) {
         waNextBtn.addEventListener('click', () => {
-          waTrack.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+          scrollToNext();
+          restartAutoplay();
         });
       }
 
@@ -1871,6 +1899,7 @@
           const slides = waTrack.querySelectorAll('.snap-center');
           if (slides[index]) {
             slides[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            restartAutoplay();
           }
         });
       });
@@ -1904,6 +1933,37 @@
       waTrack.addEventListener('scroll', () => {
         if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
         scrollTimeout = requestAnimationFrame(updateActiveDot);
+      }, { passive: true });
+
+      // Autoplay contínuo a cada 3,5 segundos (3500ms) com rolagem suave
+      let waAutoplayTimer = null;
+
+      function startAutoplay() {
+        if (waAutoplayTimer) clearInterval(waAutoplayTimer);
+        waAutoplayTimer = setInterval(scrollToNext, 3500);
+      }
+
+      function stopAutoplay() {
+        if (waAutoplayTimer) {
+          clearInterval(waAutoplayTimer);
+          waAutoplayTimer = null;
+        }
+      }
+
+      function restartAutoplay() {
+        stopAutoplay();
+        startAutoplay();
+      }
+
+      startAutoplay();
+
+      // Pausa inteligente ao passar o mouse ou tocar na tela
+      const carouselContainer = waTrack.closest('.relative') || waTrack;
+      carouselContainer.addEventListener('mouseenter', stopAutoplay);
+      carouselContainer.addEventListener('mouseleave', startAutoplay);
+      carouselContainer.addEventListener('touchstart', stopAutoplay, { passive: true });
+      carouselContainer.addEventListener('touchend', () => {
+        setTimeout(startAutoplay, 1500);
       }, { passive: true });
     }
   </script>
