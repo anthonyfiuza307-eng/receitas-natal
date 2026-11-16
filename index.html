@@ -420,6 +420,110 @@
         </div>
       </div>
 
+      <!-- ============================================================== -->
+      <!-- NOVO: CARROSSEL DE SOBREMESAS NA HERO SECTION (AUTOPLAY 2.8S)  -->
+      <!-- ============================================================== -->
+      <div class="w-full max-w-4xl mx-auto mt-10 pt-6 border-t border-gold/20">
+        <p class="text-xs sm:text-sm font-bold text-ganache mb-4 flex items-center justify-center gap-2 uppercase tracking-wide">
+          <span>🍰</span>
+          <span>Espie algumas das 30 receitas que você vai aprender hoje:</span>
+          <span>✨</span>
+        </p>
+
+        <!-- Container do Carrossel com Arraste Fluido e Snap -->
+        <div class="relative group">
+          <div id="hero-desserts-track" 
+               class="flex gap-3 sm:gap-4 overflow-x-auto no-scrollbar scroll-smooth py-2 px-1"
+               style="scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch;">
+            
+            <!-- Slide 1 -->
+            <div class="w-[220px] sm:w-[250px] flex-shrink-0 snap-center rounded-2xl bg-white border border-gold/30 shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div class="aspect-[4/3] w-full overflow-hidden bg-stone-100">
+                <img src="./sobremesa-1.jpg" 
+                     alt="Pavê de Chocolate Belga com Morangos" 
+                     loading="lazy"
+                     class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+              </div>
+              <div class="p-2.5 text-center bg-white border-t border-gold/15">
+                <span class="text-xs font-bold text-ganache block truncate">Pavê Belga com Morangos</span>
+                <span class="text-[10px] text-cherry font-semibold">Sucesso Garantido na Ceia</span>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="w-[220px] sm:w-[250px] flex-shrink-0 snap-center rounded-2xl bg-white border border-gold/30 shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div class="aspect-[4/3] w-full overflow-hidden bg-stone-100">
+                <img src="./sobremesa-2.jpg" 
+                     alt="Guirlanda de Brownie Trufado" 
+                     loading="lazy"
+                     class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+              </div>
+              <div class="p-2.5 text-center bg-white border-t border-gold/15">
+                <span class="text-xs font-bold text-ganache block truncate">Guirlanda de Brownie Trufado</span>
+                <span class="text-[10px] text-gold font-semibold">Viral de Encomendas</span>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="w-[220px] sm:w-[250px] flex-shrink-0 snap-center rounded-2xl bg-white border border-gold/30 shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div class="aspect-[4/3] w-full overflow-hidden bg-stone-100">
+                <img src="./sobremesa-3.jpg" 
+                     alt="Bombom de Uva Especial na Travessa" 
+                     loading="lazy"
+                     class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+              </div>
+              <div class="p-2.5 text-center bg-white border-t border-gold/15">
+                <span class="text-xs font-bold text-ganache block truncate">Bombom de Uva na Travessa</span>
+                <span class="text-[10px] text-emerald-800 font-semibold">Cremoso e Refrescante</span>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="w-[220px] sm:w-[250px] flex-shrink-0 snap-center rounded-2xl bg-white border border-gold/30 shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div class="aspect-[4/3] w-full overflow-hidden bg-stone-100">
+                <img src="./sobremesa-4.jpg" 
+                     alt="Travessa Ninho com Ganache e Frutas" 
+                     loading="lazy"
+                     class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+              </div>
+              <div class="p-2.5 text-center bg-white border-t border-gold/15">
+                <span class="text-xs font-bold text-ganache block truncate">Travessa Ninho com Ganache</span>
+                <span class="text-[10px] text-cherry font-semibold">A Queridinha da Família</span>
+              </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="w-[220px] sm:w-[250px] flex-shrink-0 snap-center rounded-2xl bg-white border border-gold/30 shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div class="aspect-[4/3] w-full overflow-hidden bg-stone-100">
+                <img src="./sobremesa-5.jpg" 
+                     alt="Banoffee Especial de Natal" 
+                     loading="lazy"
+                     class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+              </div>
+              <div class="p-2.5 text-center bg-white border-t border-gold/15">
+                <span class="text-xs font-bold text-ganache block truncate">Banoffee Especial de Natal</span>
+                <span class="text-[10px] text-gold font-semibold">Doce de Leite Cremoso</span>
+              </div>
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="w-[220px] sm:w-[250px] flex-shrink-0 snap-center rounded-2xl bg-white border border-gold/30 shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div class="aspect-[4/3] w-full overflow-hidden bg-stone-100">
+                <img src="./sobremesa-6.jpg" 
+                     alt="Torta Holandesa de Vitrine com Frutas" 
+                     loading="lazy"
+                     class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+              </div>
+              <div class="p-2.5 text-center bg-white border-t border-gold/15">
+                <span class="text-xs font-bold text-ganache block truncate">Torta Holandesa de Vitrine</span>
+                <span class="text-[10px] text-emerald-800 font-semibold">Apresentação Fina</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1850,103 +1954,51 @@
     }, 4500);
 
     /* ====================================================================
-       6. CARROSSEL DE PRINTS DO WHATSAPP (AUTOPLAY + SWIPE + SETAS + DOTS)
+       6. GERENCIADOR MODULAR DE CARROSSÉIS AUTOMÁTICOS
+       - Carrossel 1 (Hero Sobremesas): Autoplay 2.8s em loop contínuo
+       - Carrossel 2 (WhatsApp Prints): Autoplay 3.5s + Setas + Dots sincronizados
        ==================================================================== */
-    const waTrack = document.getElementById('whatsapp-carousel-track');
-    const waPrevBtn = document.getElementById('whatsapp-prev-btn');
-    const waNextBtn = document.getElementById('whatsapp-next-btn');
-    const waDots = document.querySelectorAll('#whatsapp-carousel-dots button');
+    function initAutoCarousel(config) {
+      const track = document.getElementById(config.trackId);
+      if (!track) return;
 
-    if (waTrack) {
+      const prevBtn = config.prevBtnId ? document.getElementById(config.prevBtnId) : null;
+      const nextBtn = config.nextBtnId ? document.getElementById(config.nextBtnId) : null;
+      const dots = config.dotsSelector ? document.querySelectorAll(config.dotsSelector) : [];
+      const intervalMs = config.interval || 3000;
+
       function getScrollStep() {
-        const slide = waTrack.querySelector('.snap-center');
-        return slide ? slide.offsetWidth + 20 : 320;
+        const slide = track.querySelector('.snap-center') || track.firstElementChild;
+        return slide ? slide.offsetWidth + (config.gap || 16) : 260;
       }
 
       function scrollToNext() {
-        const maxScroll = waTrack.scrollWidth - waTrack.clientWidth - 10;
-        if (waTrack.scrollLeft >= maxScroll) {
-          waTrack.scrollTo({ left: 0, behavior: 'smooth' });
+        const maxScroll = track.scrollWidth - track.clientWidth - 10;
+        if (track.scrollLeft >= maxScroll) {
+          track.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
-          waTrack.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+          track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
         }
       }
 
       function scrollToPrev() {
-        if (waTrack.scrollLeft <= 10) {
-          waTrack.scrollTo({ left: waTrack.scrollWidth, behavior: 'smooth' });
+        if (track.scrollLeft <= 10) {
+          track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
         } else {
-          waTrack.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+          track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
         }
       }
 
-      if (waPrevBtn) {
-        waPrevBtn.addEventListener('click', () => {
-          scrollToPrev();
-          restartAutoplay();
-        });
-      }
-
-      if (waNextBtn) {
-        waNextBtn.addEventListener('click', () => {
-          scrollToNext();
-          restartAutoplay();
-        });
-      }
-
-      waDots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          const slides = waTrack.querySelectorAll('.snap-center');
-          if (slides[index]) {
-            slides[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-            restartAutoplay();
-          }
-        });
-      });
-
-      function updateActiveDot() {
-        const slides = waTrack.querySelectorAll('.snap-center');
-        if (!slides.length) return;
-        const scrollCenter = waTrack.scrollLeft + waTrack.offsetWidth / 2;
-        let closestIndex = 0;
-        let minDiff = Infinity;
-
-        slides.forEach((slide, idx) => {
-          const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
-          const diff = Math.abs(scrollCenter - slideCenter);
-          if (diff < minDiff) {
-            minDiff = diff;
-            closestIndex = idx;
-          }
-        });
-
-        waDots.forEach((dot, idx) => {
-          if (idx === closestIndex) {
-            dot.className = 'w-3 h-3 rounded-full bg-gold transition-all duration-300 cursor-pointer';
-          } else {
-            dot.className = 'w-2.5 h-2.5 rounded-full bg-stone-300 transition-all duration-300 hover:bg-gold/60 cursor-pointer';
-          }
-        });
-      }
-
-      let scrollTimeout;
-      waTrack.addEventListener('scroll', () => {
-        if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
-        scrollTimeout = requestAnimationFrame(updateActiveDot);
-      }, { passive: true });
-
-      // Autoplay contínuo a cada 3,5 segundos (3500ms) com rolagem suave
-      let waAutoplayTimer = null;
-
+      let timer = null;
       function startAutoplay() {
-        if (waAutoplayTimer) clearInterval(waAutoplayTimer);
-        waAutoplayTimer = setInterval(scrollToNext, 3500);
+        if (timer) clearInterval(timer);
+        timer = setInterval(scrollToNext, intervalMs);
       }
 
       function stopAutoplay() {
-        if (waAutoplayTimer) {
-          clearInterval(waAutoplayTimer);
-          waAutoplayTimer = null;
+        if (timer) {
+          clearInterval(timer);
+          timer = null;
         }
       }
 
@@ -1955,17 +2007,91 @@
         startAutoplay();
       }
 
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          scrollToPrev();
+          restartAutoplay();
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          scrollToNext();
+          restartAutoplay();
+        });
+      }
+
+      if (dots.length) {
+        dots.forEach((dot, index) => {
+          dot.addEventListener('click', () => {
+            const slides = track.querySelectorAll('.snap-center');
+            if (slides[index]) {
+              slides[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+              restartAutoplay();
+            }
+          });
+        });
+
+        function updateActiveDot() {
+          const slides = track.querySelectorAll('.snap-center');
+          if (!slides.length) return;
+          const scrollCenter = track.scrollLeft + track.offsetWidth / 2;
+          let closestIndex = 0;
+          let minDiff = Infinity;
+
+          slides.forEach((slide, idx) => {
+            const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+            const diff = Math.abs(scrollCenter - slideCenter);
+            if (diff < minDiff) {
+              minDiff = diff;
+              closestIndex = idx;
+            }
+          });
+
+          dots.forEach((dot, idx) => {
+            if (idx === closestIndex) {
+              dot.className = 'w-3 h-3 rounded-full bg-gold transition-all duration-300 cursor-pointer';
+            } else {
+              dot.className = 'w-2.5 h-2.5 rounded-full bg-stone-300 transition-all duration-300 hover:bg-gold/60 cursor-pointer';
+            }
+          });
+        }
+
+        let scrollTimeout;
+        track.addEventListener('scroll', () => {
+          if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
+          scrollTimeout = requestAnimationFrame(updateActiveDot);
+        }, { passive: true });
+      }
+
       startAutoplay();
 
-      // Pausa inteligente ao passar o mouse ou tocar na tela
-      const carouselContainer = waTrack.closest('.relative') || waTrack;
-      carouselContainer.addEventListener('mouseenter', stopAutoplay);
-      carouselContainer.addEventListener('mouseleave', startAutoplay);
-      carouselContainer.addEventListener('touchstart', stopAutoplay, { passive: true });
-      carouselContainer.addEventListener('touchend', () => {
+      // Pausa inteligente ao passar o cursor ou tocar na tela
+      const container = track.closest('.relative') || track;
+      container.addEventListener('mouseenter', stopAutoplay);
+      container.addEventListener('mouseleave', startAutoplay);
+      container.addEventListener('touchstart', stopAutoplay, { passive: true });
+      container.addEventListener('touchend', () => {
         setTimeout(startAutoplay, 1500);
       }, { passive: true });
     }
+
+    // Inicialização Carrossel 1: Sobremesas da Hero Section (2.8s)
+    initAutoCarousel({
+      trackId: 'hero-desserts-track',
+      interval: 2800,
+      gap: 16
+    });
+
+    // Inicialização Carrossel 2: Prints de Depoimentos do WhatsApp (3.5s)
+    initAutoCarousel({
+      trackId: 'whatsapp-carousel-track',
+      prevBtnId: 'whatsapp-prev-btn',
+      nextBtnId: 'whatsapp-next-btn',
+      dotsSelector: '#whatsapp-carousel-dots button',
+      interval: 3500,
+      gap: 24
+    });
   </script>
 
 </body>
