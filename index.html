@@ -222,6 +222,15 @@
     .festive-divider-light .festive-divider-content {
       color: #F5BE58;
     }
+
+    /* Ocultar barra de rolagem no carrossel horizontal mantendo funcionalidade */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
   </style>
 
   <!-- Meta Pixel · NexoFy -->
@@ -812,10 +821,120 @@
   </section>
 
   <!-- ============================================================== -->
-  <!-- 7. PROVA SOCIAL — DEPOIMENTOS E FOTOS REAIS                    -->
+  <!-- 7. PROVA REAL NO WHATSAPP — CARROSSEL HORIZONTAL INTERATIVO    -->
   <!-- ============================================================== -->
-  <section class="py-14 sm:py-20 px-4 sm:px-6 bg-vanilla">
+  <section class="py-14 sm:py-20 px-4 sm:px-6 bg-vanilla border-t border-gold/20">
     <div class="max-w-[780px] mx-auto text-center">
+
+      <!-- Divisória Natalina Nobre com Ornamento Central -->
+      <div class="festive-divider" aria-hidden="true">
+        <span class="festive-divider-content">
+          <span class="text-[9px] opacity-70">✦</span>
+          <span>💬</span>
+          <span class="text-[9px] opacity-70">✦</span>
+        </span>
+      </div>
+
+      <div class="mb-3">
+        <span class="inline-flex items-center gap-2 bg-white text-emerald-800 font-bold text-[11px] sm:text-xs uppercase tracking-widest px-4 py-1.5 rounded-full border border-emerald-300 shadow-sm">
+          <span>💬</span>
+          <span>PROVA REAL NO WHATSAPP</span>
+          <span>💬</span>
+        </span>
+      </div>
+
+      <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl font-extrabold text-ganache mb-3">
+        Mensagens de Quem Já Testou e Aprovou:
+      </h2>
+      <p class="text-ganache-text text-sm sm:text-base mb-8 max-w-xl mx-auto leading-relaxed">
+        Deslize para o lado e veja os feedbacks enviados direto no nosso WhatsApp:
+      </p>
+
+      <!-- Container do Carrossel com Setas Relativas -->
+      <div class="relative max-w-[780px] mx-auto group">
+        
+        <!-- Seta Esquerda -->
+        <button id="whatsapp-prev-btn" 
+                type="button"
+                aria-label="Ver print anterior" 
+                class="absolute -left-2 sm:-left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/95 text-ganache hover:text-cherry border border-gold/40 shadow-card-hover flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none cursor-pointer">
+          <i class="fa-solid fa-chevron-left text-sm sm:text-base"></i>
+        </button>
+
+        <!-- Seta Direita -->
+        <button id="whatsapp-next-btn" 
+                type="button"
+                aria-label="Ver próximo print" 
+                class="absolute -right-2 sm:-right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/95 text-ganache hover:text-cherry border border-gold/40 shadow-card-hover flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none cursor-pointer">
+          <i class="fa-solid fa-chevron-right text-sm sm:text-base"></i>
+        </button>
+
+        <!-- Trilha de Slides com Scroll Horizontal e Snap Nativo -->
+        <div id="whatsapp-carousel-track" 
+             class="flex gap-4 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth py-3 px-2" 
+             style="scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch;">
+          
+          <!-- Slide 1 -->
+          <div class="w-[280px] sm:w-[320px] flex-shrink-0 snap-center rounded-2xl border border-[#D4AF37]/40 shadow-md bg-white p-2 sm:p-2.5 transition-transform duration-300 hover:scale-[1.01]">
+            <img src="./print-whatsapp-1.png" 
+                 alt="Feedback de aluna Camila sobremesa na travessa" 
+                 loading="lazy"
+                 class="w-full h-auto object-contain rounded-xl select-none shadow-sm">
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="w-[280px] sm:w-[320px] flex-shrink-0 snap-center rounded-2xl border border-[#D4AF37]/40 shadow-md bg-white p-2 sm:p-2.5 transition-transform duration-300 hover:scale-[1.01]">
+            <img src="./print-whatsapp-2.png" 
+                 alt="Feedback de aluna Camila brilho de vitrine na sobremesa" 
+                 loading="lazy"
+                 class="w-full h-auto object-contain rounded-xl select-none shadow-sm">
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="w-[280px] sm:w-[320px] flex-shrink-0 snap-center rounded-2xl border border-[#D4AF37]/40 shadow-md bg-white p-2 sm:p-2.5 transition-transform duration-300 hover:scale-[1.01]">
+            <img src="./print-whatsapp-3.png" 
+                 alt="Feedback de aluna Juliana Guirlanda de Brownie e encomendas" 
+                 loading="lazy"
+                 class="w-full h-auto object-contain rounded-xl select-none shadow-sm">
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="w-[280px] sm:w-[320px] flex-shrink-0 snap-center rounded-2xl border border-[#D4AF37]/40 shadow-md bg-white p-2 sm:p-2.5 transition-transform duration-300 hover:scale-[1.01]">
+            <img src="./print-whatsapp-4.png" 
+                 alt="Feedback de aluna Juliana lucros de encomendas no Natal" 
+                 loading="lazy"
+                 class="w-full h-auto object-contain rounded-xl select-none shadow-sm">
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="w-[280px] sm:w-[320px] flex-shrink-0 snap-center rounded-2xl border border-[#D4AF37]/40 shadow-md bg-white p-2 sm:p-2.5 transition-transform duration-300 hover:scale-[1.01]">
+            <img src="./print-whatsapp-5.png" 
+                 alt="Feedback de aluna Marcia ingredientes fáceis e econômicos" 
+                 loading="lazy"
+                 class="w-full h-auto object-contain rounded-xl select-none shadow-sm">
+          </div>
+
+        </div>
+
+        <!-- Indicadores (Dots) na base do Carrossel -->
+        <div id="whatsapp-carousel-dots" class="flex items-center justify-center gap-2 mt-4">
+          <button type="button" aria-label="Ir para o print 1" class="w-3 h-3 rounded-full bg-gold transition-all duration-300 cursor-pointer"></button>
+          <button type="button" aria-label="Ir para o print 2" class="w-2.5 h-2.5 rounded-full bg-stone-300 transition-all duration-300 hover:bg-gold/60 cursor-pointer"></button>
+          <button type="button" aria-label="Ir para o print 3" class="w-2.5 h-2.5 rounded-full bg-stone-300 transition-all duration-300 hover:bg-gold/60 cursor-pointer"></button>
+          <button type="button" aria-label="Ir para o print 4" class="w-2.5 h-2.5 rounded-full bg-stone-300 transition-all duration-300 hover:bg-gold/60 cursor-pointer"></button>
+          <button type="button" aria-label="Ir para o print 5" class="w-2.5 h-2.5 rounded-full bg-stone-300 transition-all duration-300 hover:bg-gold/60 cursor-pointer"></button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- 7.1 PROVA SOCIAL — DEPOIMENTOS ESCRITOS COMPACTOS              -->
+  <!-- ============================================================== -->
+  <section class="py-12 sm:py-16 px-4 sm:px-6 bg-white border-t border-gold/20">
+    <div class="max-w-[600px] mx-auto text-center">
 
       <!-- Divisória Natalina Nobre com Ornamento Central -->
       <div class="festive-divider" aria-hidden="true">
@@ -826,93 +945,96 @@
         </span>
       </div>
 
-      <div class="mb-3">
-        <span class="inline-flex items-center gap-2 bg-white text-gold font-bold text-[11px] sm:text-xs uppercase tracking-widest px-4 py-1.5 rounded-full border border-gold/30 shadow-sm">
+      <div class="mb-2">
+        <span class="inline-flex items-center gap-2 bg-vanilla text-gold font-bold text-[11px] sm:text-xs uppercase tracking-widest px-4 py-1.5 rounded-full border border-gold/30 shadow-sm">
           <span>❄️</span>
-          <span>DEPOIMENTOS & RESULTADOS REAIS</span>
+          <span>HISTÓRIAS DE SUCESSO</span>
           <span>❄️</span>
         </span>
       </div>
 
-      <div class="text-gold text-lg mb-1">⭐⭐⭐⭐⭐</div>
-      <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl font-extrabold text-ganache mb-3">
-        Veja o que outras pessoas estão falando!
+      <div class="text-gold text-base mb-1">⭐⭐⭐⭐⭐</div>
+      <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-ganache mb-2">
+        Mais Histórias de Quem Fez e Amou
       </h2>
-      <p class="text-ganache-text text-sm sm:text-base mb-10 max-w-xl mx-auto">
-        Depoimentos reais de quem preparou as receitas na ceia e até fez renda extra:
+      <p class="text-ganache-text text-xs sm:text-sm mb-8 max-w-md mx-auto leading-relaxed">
+        Depoimentos reais de quem transformou a ceia em família e gerou renda extra:
       </p>
 
-      <!-- Lista Vertical de Depoimentos com micro-interações -->
-      <div class="space-y-6 text-left">
+      <!-- Lista Vertical de Depoimentos Compactos e Elegantes -->
+      <div class="space-y-4 text-left">
         
         <!-- Depoimento 1 -->
-        <div class="bg-white p-6 rounded-3xl border border-gold/30 shadow-card-premium premium-card">
-          <div class="flex items-center gap-1 text-gold text-sm mb-3">
+        <div class="bg-vanilla p-4 sm:p-5 rounded-2xl border border-gold/30 shadow-card-premium premium-card">
+          <div class="flex items-center gap-1 text-gold text-xs mb-2">
             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
           </div>
-          <p class="text-ganache-text text-sm sm:text-base italic leading-relaxed mb-4">
+          <p class="text-ganache-text text-sm italic leading-relaxed mb-3">
             "A Guirlanda de Brownie foi o maior sucesso da ceia! Meus sobrinhos amaram e todo mundo achou que eu tinha comprado numa confeitaria cara. As medidas são certinhas e a casquinha fica crocante de verdade!"
           </p>
-          <div class="rounded-2xl overflow-hidden mb-4 border border-stone-100 shadow-inner">
+          <div class="rounded-xl overflow-hidden mb-3 border border-stone-200/70 shadow-inner">
             <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80" 
                  alt="Foto real da Guirlanda de Brownie feita pela cliente" 
-                 class="w-full aspect-video object-cover object-center rounded-2xl">
+                 loading="lazy"
+                 class="w-full h-40 sm:h-44 object-cover object-center rounded-xl">
           </div>
-          <div class="flex items-center gap-3 pt-2 border-t border-stone-100">
-            <div class="w-10 h-10 rounded-full bg-gold/20 text-gold font-bold flex items-center justify-center text-sm">
+          <div class="flex items-center gap-3 pt-2 border-t border-stone-200/60">
+            <div class="w-9 h-9 rounded-full bg-gold/20 text-gold font-bold flex items-center justify-center text-xs">
               CM
             </div>
             <div>
               <h4 class="font-bold text-ganache text-sm">Camila Mendes</h4>
-              <span class="text-xs text-ganache-muted">São Paulo, SP • Fez para a ceia em família</span>
+              <span class="text-[11px] text-ganache-muted">São Paulo, SP • Fez para a ceia em família</span>
             </div>
           </div>
         </div>
 
-        <!-- Depoimento 2 (Sobremesa na Travessa Real - SEM GATO) -->
-        <div class="bg-white p-6 rounded-3xl border border-gold/30 shadow-card-premium premium-card">
-          <div class="flex items-center gap-1 text-gold text-sm mb-3">
+        <!-- Depoimento 2 (Sobremesa na Travessa Real) -->
+        <div class="bg-vanilla p-4 sm:p-5 rounded-2xl border border-gold/30 shadow-card-premium premium-card">
+          <div class="flex items-center gap-1 text-gold text-xs mb-2">
             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
           </div>
-          <p class="text-ganache-text text-sm sm:text-base italic leading-relaxed mb-4">
+          <p class="text-ganache-text text-sm italic leading-relaxed mb-3">
             "Fiz as sobremesas na travessa para vender para os vizinhos e faturei mais de R$ 1.600 em apenas uma semana! O bônus da planilha de precificação salvou minha vida, pois eu não sabia quanto cobrar. Recomendo de olhos fechados!"
           </p>
-          <div class="rounded-2xl overflow-hidden mb-4 border border-stone-100 shadow-inner">
+          <div class="rounded-xl overflow-hidden mb-3 border border-stone-200/70 shadow-inner">
             <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80" 
                  alt="Foto real de sobremesa natalina cremosa na travessa para encomenda" 
-                 class="w-full aspect-video object-cover object-center rounded-2xl">
+                 loading="lazy"
+                 class="w-full h-40 sm:h-44 object-cover object-center rounded-xl">
           </div>
-          <div class="flex items-center gap-3 pt-2 border-t border-stone-100">
-            <div class="w-10 h-10 rounded-full bg-cherry/20 text-cherry font-bold flex items-center justify-center text-sm">
+          <div class="flex items-center gap-3 pt-2 border-t border-stone-200/60">
+            <div class="w-9 h-9 rounded-full bg-cherry/20 text-cherry font-bold flex items-center justify-center text-xs">
               RS
             </div>
             <div>
               <h4 class="font-bold text-ganache text-sm">Renata Silveira</h4>
-              <span class="text-xs text-ganache-muted">Curitiba, PR • Vendeu por encomenda</span>
+              <span class="text-[11px] text-ganache-muted">Curitiba, PR • Vendeu por encomenda</span>
             </div>
           </div>
         </div>
 
         <!-- Depoimento 3 -->
-        <div class="bg-white p-6 rounded-3xl border border-gold/30 shadow-card-premium premium-card">
-          <div class="flex items-center gap-1 text-gold text-sm mb-3">
+        <div class="bg-vanilla p-4 sm:p-5 rounded-2xl border border-gold/30 shadow-card-premium premium-card">
+          <div class="flex items-center gap-1 text-gold text-xs mb-2">
             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
           </div>
-          <p class="text-ganache-text text-sm sm:text-base italic leading-relaxed mb-4">
+          <p class="text-ganache-text text-sm italic leading-relaxed mb-3">
             "Eu sou péssima na cozinha e morria de medo de estragar a sobremesa de Natal. Segui o passo a passo com as fotos e deu super certo. Meu marido repetiu três vezes. Pelo valor cobrado, entrega ouro!"
           </p>
-          <div class="rounded-2xl overflow-hidden mb-4 border border-stone-100 shadow-inner">
+          <div class="rounded-xl overflow-hidden mb-3 border border-stone-200/70 shadow-inner">
             <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=800&q=80" 
                  alt="Foto real do prato finalizado servido na ceia" 
-                 class="w-full aspect-video object-cover object-center rounded-2xl">
+                 loading="lazy"
+                 class="w-full h-40 sm:h-44 object-cover object-center rounded-xl">
           </div>
-          <div class="flex items-center gap-3 pt-2 border-t border-stone-100">
-            <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-sm">
+          <div class="flex items-center gap-3 pt-2 border-t border-stone-200/60">
+            <div class="w-9 h-9 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-xs">
               PF
             </div>
             <div>
               <h4 class="font-bold text-ganache text-sm">Patrícia Fonseca</h4>
-              <span class="text-xs text-ganache-muted">Belo Horizonte, MG • Primeira vez fazendo doces</span>
+              <span class="text-[11px] text-ganache-muted">Belo Horizonte, MG • Primeira vez fazendo doces</span>
             </div>
           </div>
         </div>
@@ -1717,6 +1839,73 @@
       showSocialProof();
       setInterval(showSocialProof, 17000);
     }, 4500);
+
+    /* ====================================================================
+       6. CARROSSEL DE PRINTS DO WHATSAPP (SWIPE + SETAS + DOTS NATIVOS)
+       ==================================================================== */
+    const waTrack = document.getElementById('whatsapp-carousel-track');
+    const waPrevBtn = document.getElementById('whatsapp-prev-btn');
+    const waNextBtn = document.getElementById('whatsapp-next-btn');
+    const waDots = document.querySelectorAll('#whatsapp-carousel-dots button');
+
+    if (waTrack) {
+      function getScrollStep() {
+        const slide = waTrack.querySelector('.snap-center');
+        return slide ? slide.offsetWidth + 20 : 320;
+      }
+
+      if (waPrevBtn) {
+        waPrevBtn.addEventListener('click', () => {
+          waTrack.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+        });
+      }
+
+      if (waNextBtn) {
+        waNextBtn.addEventListener('click', () => {
+          waTrack.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+        });
+      }
+
+      waDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          const slides = waTrack.querySelectorAll('.snap-center');
+          if (slides[index]) {
+            slides[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          }
+        });
+      });
+
+      function updateActiveDot() {
+        const slides = waTrack.querySelectorAll('.snap-center');
+        if (!slides.length) return;
+        const scrollCenter = waTrack.scrollLeft + waTrack.offsetWidth / 2;
+        let closestIndex = 0;
+        let minDiff = Infinity;
+
+        slides.forEach((slide, idx) => {
+          const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+          const diff = Math.abs(scrollCenter - slideCenter);
+          if (diff < minDiff) {
+            minDiff = diff;
+            closestIndex = idx;
+          }
+        });
+
+        waDots.forEach((dot, idx) => {
+          if (idx === closestIndex) {
+            dot.className = 'w-3 h-3 rounded-full bg-gold transition-all duration-300 cursor-pointer';
+          } else {
+            dot.className = 'w-2.5 h-2.5 rounded-full bg-stone-300 transition-all duration-300 hover:bg-gold/60 cursor-pointer';
+          }
+        });
+      }
+
+      let scrollTimeout;
+      waTrack.addEventListener('scroll', () => {
+        if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
+        scrollTimeout = requestAnimationFrame(updateActiveDot);
+      }, { passive: true });
+    }
   </script>
 
 </body>
